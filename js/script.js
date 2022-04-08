@@ -6,6 +6,7 @@ const remainingGuessesElement = document.querySelector(".remaining");
 const remainingGuessesSpan = document.querySelector(".remaining span");
 const message = document.querySelector(".message");
 const playAgain = document.querySelector(".play-again");
+const letterLabel = document.querySelector('label[for="letter"]');
 
 let word = "magnolia";
 let guessedLetters = [];
@@ -127,6 +128,8 @@ const showGuessedLetters = function () {
      remainingGuessesElement.classList.add("hide");
      guessedLettersElement.classList.add("hide");
      playAgain.classList.remove("hide");
+     letterInput.classList.add("hide");
+     letterLabel.classList.add("hide");
  };
 
  playAgain.addEventListener("click", function (){
@@ -141,6 +144,8 @@ const showGuessedLetters = function () {
     remainingGuessesElement.classList.remove("hide");
     guessedLettersElement.classList.remove("hide");
     playAgain.classList.add("hide");
+    letterInput.classList.remove("hide");
+    letterLabel.classList.remove("hide");
 
     getWord();
  });
